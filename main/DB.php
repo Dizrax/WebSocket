@@ -1,5 +1,5 @@
 <?php
-
+/*
 class DB
 {
 	private $connection;
@@ -26,4 +26,4 @@ class DB
 		$var = htmlentities($var);
 		return stripslashes($var);
 	}
-}
+}*/

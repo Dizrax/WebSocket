@@ -1,43 +1,4 @@
 <?php
-class Id
-{
-    protected static $value = 0;
-
-    static function get()
-    {
-        return $value++;
-    }
-}
-
-class Action{}
-
-class Go extends Action
-{
-    public $path;
-    function  __construct ($path) 
-    {
-        $this->path = $path;
-    }
-}
-
-class Attack extends Action
-{
-    public $target;
-    function  __construct ($target) 
-    {
-        $this->target = $target;
-    }
-}
-
-class Player
-{
-    public $units;
-    function  __construct () 
-    {
-        $this->units = array();
-    }
-}
-
 class Game
 {    
     public $act; 

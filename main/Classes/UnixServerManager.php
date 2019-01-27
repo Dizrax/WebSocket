@@ -1,39 +1,4 @@
-<?php
-
-class ServerManager implements IServerManager 
-{
-	private static $currentManager; 
-	 static function getManager()
-	{
-		if(self::$currentManager == null)
-		{
-			if (self::getOS() === 'WIN')
-				self::$currentManager = new WinServerManager();
-			else
-				self::$currentManager = new UnixServerManager();
-		}
-		return self::$currentManager;		
-	}
-
-	 static function getOS()
-	{
-		return strtoupper(substr(PHP_OS,0,3));
-	}
-
-	 static function GetStatus($pidfile)
-	{
-		return self::getManager()->GetStatus($pidfile);
-	}
-	 static function is_alive($pidfile)
-	{
-		return  self::getManager()->is_alive($pidfile);
-	}
-	 static function GetJsonStatus($pidfile)
-	{
-		return self::getManager()->GetJsonStatus($pidfile);
-	}
-}
-
+<?
 class UnixServerManager implements IServerManager
 {		
 	public static function GetStatus($pidfile) 
